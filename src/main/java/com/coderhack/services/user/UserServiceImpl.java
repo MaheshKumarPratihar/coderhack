@@ -46,7 +46,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<UserResponse> getAllUsers() {
         return this.userRepository
-                .findAllByOrderByScore()
+                .findAllByOrderByScoreDesc()
                 .stream()
                 .map(userMapper::fromUser)
                 .collect(Collectors.toList());
